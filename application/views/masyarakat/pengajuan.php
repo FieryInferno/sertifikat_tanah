@@ -17,6 +17,8 @@
                   <th>Alamat</th>
                   <th scope="col">Bukti Pembayaran</th>
                   <th>Status</th>
+                  <th>Surat Ukur</th>
+                  <th>Sertifikat</th>
                 </tr>
               </thead>
               <tbody>
@@ -90,6 +92,12 @@
                               break;
                           }
                         ?>
+                      </td>
+                      <td>
+                        <?= $key['surat_ukur'] ? '<a href="' . base_url() . 'assets/' . $key['surat_ukur'] . '" class="btn btn-primary" target="_blank">Lihat Surat Ukur</a>' : ''; ?>
+                      </td>
+                      <td>
+                        <?= $key['sertifikat'] ? '<a href="' . base_url() . 'assets/' . $key['sertifikat'] . '" class="btn btn-primary" target="_blank">Lihat Sertifikat</a>' : ''; ?>
                       </td>
                     </tr>
                   <?php }

@@ -22,6 +22,7 @@ class ModelPengajuan extends CI_Model {
 	public function getByUser()
 	{
     $this->db->join('user', 'pengajuan.id_masyarakat = user.user_id');
+    $this->db->join('pengukuran', 'pengajuan.pengukuran = pengukuran.id_pengukuran', 'left');
 		return $this->db->get_where('pengajuan', [
 			'id_masyarakat'	=> $this->session->id_user
 		])->result_array();
